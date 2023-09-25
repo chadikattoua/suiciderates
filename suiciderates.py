@@ -154,7 +154,6 @@ fig4 = px.bar(filtered_data, x='sex', y='suicides_no',
               title=title,
               labels={'suicides_no': 'Total Suicides'},
               color_discrete_map={'male': 'red', 'female': 'blue'})
-st.write('
-The visualization prominently highlights a stark disparity: a significantly higher number of suicides occurring in males compared to females. This eye-catching contrast in suicide rates between genders raises important questions about the underlying factors contributing to this phenomenon. However, it is crucial to approach this data with a nuanced perspective, recognizing that this disparity is influenced by a complex interplay of various factors')
+st.write('The visualization prominently highlights a stark disparity: a significantly higher number of suicides occurring in males compared to females. This eye-catching contrast in suicide rates between genders raises important questions about the underlying factors contributing to this phenomenon. However, it is crucial to approach this data with a nuanced perspective, recognizing that this disparity is influenced by a complex interplay of various factors')
 # Display the bar chart
 st.plotly_chart(fig4)
