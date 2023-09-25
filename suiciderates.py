@@ -61,24 +61,24 @@ st.markdown("<hr>", unsafe_allow_html=True)
 
 
 # Load your data
-suiciderates = pd.read_csv('suicide_rates.csv')
+suiciderates1 = pd.read_csv('suicide_rates.csv')
 
 # Calculate the suicide rate
-suiciderates['suicide_rate'] = suiciderates['suicides_no'] / suiciderates['population']
+suiciderates1['suicide_rate'] = suiciderates1['suicides_no'] / suiciderates1['population']
 
 # Sort the DataFrame by year
-suiciderates = suiciderates.sort_values(by="year")
+suiciderates1 = suiciderates1.sort_values(by="year")
 
 # Define categories for suicides/100k pop
-suiciderates['suicide_category'] = pd.cut(
-    suiciderates['suicides/100k pop'],
+suiciderates1['suicide_category'] = pd.cut(
+    suiciderates1['suicides/100k pop'],
     bins=[0, 50, 100, float('inf')],
     labels=['Low', 'Mid', 'High']
 )
 
 # Create the grouped bar chart
-fig_gdp_vs_suicides = px.bar(
-    suiciderates,
+fig_gdp_vs_suicides1 = px.bar(
+    suiciderates1,
     x='suicide_category',
     y='gdp_per_capita ($)',
     title='animated barchart',
