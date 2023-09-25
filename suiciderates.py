@@ -76,7 +76,7 @@ suiciderates2['suicide_category'] = pd.cut(
 )
 
 # Create the grouped bar chart
-fig_gdp_vs_suicides2 = px.bar(
+fig_gdp_vs_suicides = px.bar(
     suiciderates2,
     x='suicide_category',
     y='gdp_per_capita ($)',
