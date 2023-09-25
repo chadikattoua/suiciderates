@@ -135,9 +135,6 @@ suiciderates['suicide_rate'] = suiciderates['suicides_no'] / suiciderates['popul
 # Sort the DataFrame by year
 suiciderates = suiciderates.sort_values(by="year")
 
-# Define colors for the bar chart
-colors = ['red', 'blue']
-
 # Sidebar
 st.sidebar.title("Gender Selector")
 gender = st.sidebar.selectbox("Gender", ['Male', 'Female', 'Both'])
@@ -153,11 +150,10 @@ else:
     filtered_data = suiciderates
     title = 'Total Suicides by Gender'
 
-# Create bar chart
-fig4 = px.bar(filtered_data, x='sex', y='suicides_no', color='sex',
+fig4 = px.bar(filtered_data, x='sex', y='suicides_no',
               title=title,
               labels={'suicides_no': 'Total Suicides'},
-              color=colors)
+              color_discrete_map={'male': 'red', 'female': 'blue'})
 
 # Display the bar chart
 st.plotly_chart(fig4)
