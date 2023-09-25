@@ -123,7 +123,7 @@ st.plotly_chart(fig_gdp_vs_suicides)
 st.markdown("<hr>", unsafe_allow_html=True)
 
 # Set the title for your Streamlit app
-st.title('Suicide number across Gender')
+st.title('Suicide Number Across Gender')
 
 
 # Read data from the CSV file
@@ -136,7 +136,7 @@ suiciderates['suicide_rate'] = suiciderates['suicides_no'] / suiciderates['popul
 suiciderates = suiciderates.sort_values(by="year")
 
 # Define colors for the bar chart
-colors = ['#1f77b4', '#ff7f0e']
+colors = ['red', 'blue']
 
 # Sidebar
 st.sidebar.title("Gender Selector")
