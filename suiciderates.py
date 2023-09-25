@@ -157,7 +157,7 @@ else:
 fig4 = px.bar(filtered_data, x='sex', y='suicides_no', color='sex',
               title=title,
               labels={'suicides_no': 'Total Suicides'},
-              color_discrete_sequence=colors)
+              color=colors)
 
 # Display the bar chart
 st.plotly_chart(fig4)
