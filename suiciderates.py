@@ -71,8 +71,8 @@ suiciderates2 = suiciderates2.sort_values(by="year")
 # Define categories for suicides/100k pop
 suiciderates2['suicide_category'] = pd.cut(
     suiciderates2['suicides/100k pop'],
-    bins2=[0, 50, 100, float('inf')],
-    labels2=['Low', 'Mid', 'High']
+    bins=[0, 50, 100, float('inf')],
+    labels=['Low', 'Mid', 'High']
 )
 
 # Create the grouped bar chart
