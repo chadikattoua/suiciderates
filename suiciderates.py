@@ -38,7 +38,7 @@ def create_suicide_rate_map(year):
     return fig_map
 
 def main():
-    st.title("Suicide Rates Between 1985 and 2016 Per Country")
+    st.title("Suicide Rates between 1985 and 2016 per country")
     st.write("This visualization displays an animated map of suicide rates by country over time.")
     
     st.sidebar.title("Year Selector")
@@ -54,16 +54,80 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
+# Add a horizontal line to separate visuals
+st.markdown("<hr>", unsafe_allow_html=True)
+
+
+# Load your data
+suiciderates = pd.read_csv('suicide_rates2.csv')
+
+# Calculate the suicide rate
+suiciderates['suicide_rate'] = suiciderates['suicides_no'] / suiciderates['population']
+
+# Sort the DataFrame by year
+suiciderates = suiciderates.sort_values(by="year")
+
+# Define categories for suicides/100k pop
+suiciderates['suicide_category'] = pd.cut(
+    suiciderates['suicides/100k pop'],
+    bins=[0, 50, 100, float('inf')],
+    labels=['Low', 'Mid', 'High']
+)
+
+# Create the grouped bar chart
+fig_gdp_vs_suicides = px.bar(
+    suiciderates,
+    x='suicide_category',
+    y='gdp_per_capita ($)',
+    title='animated barchart',
+    labels={'gdp_per_capita ($)': 'GDP per Capita', 'suicides/100k pop': 'Suicides per 100k Population'},
+    color='suicide_category',
+    hover_name='country',
+    animation_frame='country',
+    color_discrete_map={
+        'Low': 'green',
+        'Mid': 'orange',
+        'High': 'red'
+    },
+    category_orders={"suicide_category": ["Low", "Mid", "High"]},
+    text='gdp_per_capita ($)',
+    height=500,
+    width=800
+)
+
+fig_gdp_vs_suicides.update_xaxes(title_text="Suicide Category")
+fig_gdp_vs_suicides.update_yaxes(title_text="GDP per Capita ($)")
+
+fig_gdp_vs_suicides.update_layout(
+    title_x=0.5,
+    title_font=dict(size=20),
+)
+
+fig_gdp_vs_suicides.update_layout(
+    legend_title_text='Suicide Category',
+    legend=dict(
+        x=1,
+        y=1,
+    )
+)
+
+# Set the title for your Streamlit app
+st.title('GDP per Capita vs. Suicides per 100k Population')
+
+# Display the chart
+st.plotly_chart(fig_gdp_vs_suicides)
 
 
 # Add a horizontal line to separate visuals
 st.markdown("<hr>", unsafe_allow_html=True)
 
 # Set the title for your Streamlit app
-st.title('Suicide Number Across Gender')
+st.title('Suicide number across Gender')
+
 
 # Read data from the CSV file
-suiciderates = pd.read_csv('suicide_rates.csv')
+suiciderates = pd.read_csv('suicide_rates3.csv')
 
 # Calculate the suicide rate
 suiciderates['suicide_rate'] = suiciderates['suicides_no'] / suiciderates['population']
