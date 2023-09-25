@@ -1,15 +1,8 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Sep 25 17:51:15 2023
-
-@author: chadikattouah
-"""
 import pandas as pd
 import numpy as np
 import streamlit as st
-import plotly.express as px
 import plotly.graph_objects as go
+import plotly.express as px
 
 
 suiciderates = pd.read_csv('suicide_rates.csv')
