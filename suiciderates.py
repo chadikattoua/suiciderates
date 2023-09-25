@@ -61,7 +61,7 @@ st.markdown("<hr>", unsafe_allow_html=True)
 
 
 # Load your data
-suiciderates = pd.read_csv('/Users/chadikattouah/Downloads/suicide_rates.csv')
+suiciderates = pd.read_csv('suicide_rates.csv')
 
 # Calculate the suicide rate
 suiciderates['suicide_rate'] = suiciderates['suicides_no'] / suiciderates['population']
@@ -128,7 +128,7 @@ st.title('Suicide number across Gender')
 
 
 # Read data from the CSV file
-suiciderates = pd.read_csv('/Users/chadikattouah/Downloads/suicide_rates.csv')
+suiciderates = pd.read_csv('suicide_rates.csv')
 
 # Calculate the suicide rate
 suiciderates['suicide_rate'] = suiciderates['suicides_no'] / suiciderates['population']
