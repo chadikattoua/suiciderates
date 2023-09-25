@@ -62,39 +62,38 @@ st.markdown("<hr>", unsafe_allow_html=True)
 # Set the title for your Streamlit app
 st.title('Suicide number across Gender')
 
-
 # Read data from the CSV file
-suiciderates = pd.read_csv('suicide_rates.csv')
+suiciderates2 = pd.read_csv('suicide_rates.csv')
 
 # Calculate the suicide rate
-suiciderates['suicide_rate'] = suiciderates['suicides_no'] / suiciderates['population']
+suiciderates2['suicide_rate'] = suiciderates2['suicides_no'] / suiciderates2['population']
 
 # Sort the DataFrame by year
-suiciderates = suiciderates.sort_values(by="year")
+suiciderates2 = suiciderates2.sort_values(by="year")
 
 # Define colors for the bar chart
-colors = ['#1f77b4', '#ff7f0e']
+colors1 = ['#1f77b4', '#ff7f0e']
 
 # Sidebar
 st.sidebar.title("Gender Selector")
-gender = st.sidebar.selectbox("Select Gender", ['Male', 'Female', 'Both'])
+gender1 = st.sidebar.selectbox("Select Gender", ['Male', 'Female', 'Both'])
 
 # Filter data based on the selected gender
-if gender == 'Male':
-    filtered_data = suiciderates[suiciderates['sex'] == 'male']
+if gender1 == 'Male':
+    filtered_data = suiciderates2[suiciderates2['sex'] == 'male']
     title = 'Total Suicides by Male'
-elif gender == 'Female':
-    filtered_data = suiciderates[suiciderates['sex'] == 'female']
+elif gender1 == 'Female':
+    filtered_data = suiciderates2[suiciderates2['sex'] == 'female']
     title = 'Total Suicides by Female'
 else:
-    filtered_data = suiciderates
+    filtered_data = suiciderates2
     title = 'Total Suicides by Gender'
 
 # Create bar chart
 fig4 = px.bar(filtered_data, x='sex', y='suicides_no', color='sex',
               title=title,
               labels={'suicides_no': 'Total Suicides'},
-              color_discrete_sequence=colors)
+              color_discrete_sequence=colors1)
 
 # Display the bar chart
 st.plotly_chart(fig4)
