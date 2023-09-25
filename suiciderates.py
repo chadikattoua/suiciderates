@@ -80,7 +80,7 @@ fig_gdp_vs_suicides = px.bar(
     suiciderates,
     x='suicide_category',
     y='gdp_per_capita ($)',
-    title='animated barchart',
+    title='Animated Barchart',
     labels={'gdp_per_capita ($)': 'GDP per Capita', 'suicides/100k pop': 'Suicides per 100k Population'},
     color='suicide_category',
     hover_name='country',
