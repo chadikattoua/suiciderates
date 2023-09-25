@@ -115,6 +115,8 @@ fig_gdp_vs_suicides.update_layout(
 # Set the title for your Streamlit app
 st.title('GDP per Capita vs. Suicides per 100k Population')
 
+st.write('This visualization succinctly illustrates a noteworthy pattern: in countries with low suicide rates within a population of 100,000, there is often a higher GDP per capita. This suggests a connection between economic prosperity and lower suicide rates, even within the low suicide rate category.')
+
 # Display the chart
 st.plotly_chart(fig_gdp_vs_suicides)
 
@@ -154,6 +156,6 @@ fig4 = px.bar(filtered_data, x='sex', y='suicides_no',
               title=title,
               labels={'suicides_no': 'Total Suicides'},
               color_discrete_map={'male': 'red', 'female': 'blue'})
-st.write('The visualization prominently highlights a stark disparity: a significantly higher number of suicides occurring in males compared to females. This eye-catching contrast in suicide rates between genders raises important questions about the underlying factors contributing to this phenomenon. However, it is crucial to approach this data with a nuanced perspective, recognizing that this disparity could be influenced by a complex interplay of various factors but cannot be generalized')
+st.write('The visualization prominently highlights a stark disparity: a significantly higher number of suicides occurring in males compared to females. This eye-catching contrast in suicide rates between genders raises important questions about the underlying factors contributing to this phenomenon. However, it is crucial to approach this data with a nuanced perspective, recognizing that this disparity could be influenced by a complex interplay of various factors but cannot be generalized.')
 # Display the bar chart
 st.plotly_chart(fig4)
