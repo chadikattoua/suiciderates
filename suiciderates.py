@@ -128,13 +128,13 @@ st.title('Suicide number across Gender')
 
 
 # Read data from the CSV file
-suiciderates = pd.read_csv('suicide_rates.csv')
+suiciderates2 = pd.read_csv('suicide_rates.csv')
 
 # Calculate the suicide rate
-suiciderates['suicide_rate'] = suiciderates['suicides_no'] / suiciderates['population']
+suiciderates2['suicide_rate'] = suiciderates2['suicides_no'] / suiciderates2['population']
 
 # Sort the DataFrame by year
-suiciderates = suiciderates.sort_values(by="year")
+suiciderates2 = suiciderates2.sort_values(by="year")
 
 # Define colors for the bar chart
 colors = ['#1f77b4', '#ff7f0e']
@@ -145,10 +145,10 @@ gender = st.sidebar.selectbox("Select Gender", ['Male', 'Female', 'Both'])
 
 # Filter data based on the selected gender
 if gender == 'Male':
-    filtered_data = suiciderates[suiciderates['sex'] == 'male']
+    filtered_data = suiciderates2[suiciderates['sex'] == 'male']
     title = 'Total Suicides by Male'
 elif gender == 'Female':
-    filtered_data = suiciderates[suiciderates['sex'] == 'female']
+    filtered_data = suiciderates2[suiciderates['sex'] == 'female']
     title = 'Total Suicides by Female'
 else:
     filtered_data = suiciderates
