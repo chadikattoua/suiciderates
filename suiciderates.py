@@ -13,7 +13,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 
 
-suiciderates = pd.read_csv('/Users/chadikattouah/Downloads/suicide_rates.csv')
+suiciderates = pd.read_csv('suicide_rates.csv')
 
 # Calculate the suicide rate
 suiciderates['suicide_rate'] = suiciderates['suicides_no'] / suiciderates['population']
