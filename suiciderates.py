@@ -8,8 +8,7 @@ Created on Mon Sep 25 17:51:15 2023
 import pandas as pd
 import numpy as np
 import streamlit as st
-import plotly.express as px
-import plotly.graph_objects as go
+
 
 
 suiciderates = pd.read_csv('suicide_rates.csv')
