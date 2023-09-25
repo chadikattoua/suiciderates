@@ -38,8 +38,8 @@ def create_suicide_rate_map(year):
     return fig_map
 
 def main():
-    st.title("Suicide Rates between 1985 and 2016 per country")
-    st.write("This visualization displays an animated map of suicide rates by country over time.")
+    st.title("Suicide Rates Between 1985 and 2016 per Country")
+    st.write("This visualization displays an animated map of suicide rates by country over time")
     
     st.sidebar.title("Year Selector")
     
