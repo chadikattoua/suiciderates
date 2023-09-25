@@ -59,6 +59,9 @@ if __name__ == "__main__":
 # Add a horizontal line to separate visuals
 st.markdown("<hr>", unsafe_allow_html=True)
 
+# Set the title for your Streamlit app
+st.title('Suicide Number Across Gender')
+
 # Read data from the CSV file
 suiciderates = pd.read_csv('suicide_rates.csv')
 
