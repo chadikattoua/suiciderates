@@ -38,7 +38,7 @@ def create_suicide_rate_map(year):
     return fig_map
 
 def main():
-    st.title("Suicide Rates between 1985 and 2016 per country")
+    st.title("Suicide Rates Between 1985 and 2016 Per Country")
     st.write("This visualization displays an animated map of suicide rates by country over time.")
     
     st.sidebar.title("Year Selector")
@@ -76,7 +76,7 @@ colors1 = ['#1f77b4', '#ff7f0e']
 
 # Sidebar
 st.sidebar.title("Gender Selector")
-gender1 = st.sidebar.selectbox("Select Gender", ['Male', 'Female', 'Both'])
+gender1 = st.sidebar.selectbox("Gender", ['Male', 'Female', 'Both'])
 
 # Filter data based on the selected gender
 if gender1 == 'Male':
